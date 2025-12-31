@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WeatherNow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-container">
+    <header class="main-header">
+        <div class="logo">
+            <img src="logo.png" class="logo-icon"
+                 onerror="this.src='https://cdn-icons-png.flaticon.com/512/1163/1163763.png'">
+            <div>
+                <h1>WeatherNow</h1>
+                <p>Your personal weather companion</p>
+            </div>
+        </div>
+
+        <!-- 🌙 Dark mode toggle -->
+        <button id="theme-toggle" style="
+            background:#52658e;
+            color:white;
+            border:none;
+            padding:8px 13px;
+            border-radius:10px;
+            cursor:pointer;
+            font-size:0.8rem;">
+            🌙
+        </button>
+       </header>
+
+    <div class="search-section">
+        <input id="city-input" placeholder="Search for a city...">
+        <button id="search-btn">Search</button>
+    </div>
+
+    <section id="home-screen" class="home-card">
+        <img src="vecteezy_3d-weather-icon-day-with-rain_24825195.png"
+             class="home-icon">
+        <h2>Welcome to WeatherNow</h2>
+        <p>Search any city to see real-time weather information</p>
+    </section>
+
+    <section id="dashboard" class="dashboard hidden fade-in">
+
+        <!-- hero, info, forecast SAME AS YOUR CODE -->
+        <!-- I am NOT touching structure -->
+
+        <div class="hero-card">
+            <div class="hero-left">
+                <h2 id="city-name"></h2>
+                <p id="weather-desc"></p>
+                <div class="hero-temp-box">
+                    <img id="main-icon">
+                    <div class="temp-val">
+                        <span id="main-temp"></span>
+                        <div id="feels-like" class="feels-pill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="unit-toggle">
+                    <button id="c-btn" class="unit active">°C</button>
+                    <button id="f-btn" class="unit">°F</button>
+                </div>
+                <div class="date-pill" id="current-date"></div>
+            </div>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card"><h4>Humidity</h4><p id="humidity"></p></div>
+            <div class="info-card"><h4>Wind</h4><p id="wind"></p></div>
+            <div class="info-card"><h4>Pressure</h4><p id="pressure"></p></div>
+            <div class="info-card"><h4>Visibility</h4><p id="visibility"></p></div>
+            <div class="info-card"><h4>UV Index</h4><p id="uv-box"></p></div>
+            <div class="info-card"><h4>Sunrise</h4><p id="sunrise"></p></div>
+            <div class="info-card"><h4>Sunset</h4><p id="sunset"></p></div>
+        </div>
+
+        <div class="forecast-container">
+            <div class="section">
+                <h3>Hourly Forecast</h3>
+                <div id="hourly-container" class="hourly-scroll"></div>
+            </div>
+            <div class="section">
+                <h3>5-Day Forecast</h3>
+                <div id="daily-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">Weather data provided by OpenWeatherMap API</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

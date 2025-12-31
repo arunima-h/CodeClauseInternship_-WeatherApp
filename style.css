@@ -1,0 +1,307 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= THEME VARIABLES ================= */
+:root {
+    --bg-main: linear-gradient(135deg,#1ea0ff,#6a5cff);
+
+    --card-main: #ffffff;
+    --card-soft: rgba(255,255,255,0.85);
+    --card-muted: #f3f6fc;
+
+    --text-main: #0f172a;
+    --text-soft: #64748b;
+    --text-invert: #ffffff;
+
+    --accent: #488bf9;
+    --accent-btn: #7831f3;
+
+    --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+    --shadow-strong: 0 12px 24px rgba(0,0,0,0.18);
+}
+
+/* ================= BODY ================= */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    color: var(--text-main);
+    transition: background 0.4s ease, color 0.3s ease;
+}
+
+.app-container {
+    width: 95%;
+    max-width: 1000px;
+    padding: 20px 0;
+}
+
+/* ================= HEADER ================= */
+.main-header {
+    background: var(--card-main);
+    padding: 20px 30px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-soft);
+}
+
+.logo {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.logo-icon { width: 40px; }
+
+.logo h1 {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.logo p {
+    font-size: 0.8rem;
+    color: var(--text-soft);
+}
+
+/* ================= SEARCH ================= */
+.search-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.search-section input {
+    flex: 1;
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: none;
+    font-size: 1rem;
+    box-shadow: var(--shadow-soft);
+    outline: none;
+}
+
+.search-section button {
+    padding: 0 30px;
+    border-radius: 15px;
+    border: none;
+    background: var(--accent-btn);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ================= HOME ================= */
+.home-card {
+    background: var(--card-main);
+    border-radius: 25px;
+    min-height: 400px;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-soft);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.home-icon {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+/* ================= HERO ================= */
+.hero-card {
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.25),
+        rgba(255,255,255,0.15)
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 25px 35px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#city-name {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+#weather-desc {
+    font-size: 1rem;
+    opacity: 0.85;
+    text-transform: capitalize;
+}
+
+.hero-temp-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+#main-icon { width: 70px; }
+
+#main-temp {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.feels-pill {
+    background: rgba(255,255,255,0.25);
+    padding: 4px 12px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+/* ================= HERO RIGHT ================= */
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.unit-toggle {
+    display: flex;
+    background: rgba(0,0,0,0.15);
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.unit {
+    padding: 5px 12px;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    border-radius: 7px;
+    font-size: 0.8rem;
+}
+
+.unit.active {
+    background: white;
+    color: #1ea0ff;
+    font-weight: bold;
+}
+
+.date-pill {
+    background: rgba(255,255,255,0.15);
+    padding: 8px 15px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+/* ================= INFO GRID ================= */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.info-card {
+    background: var(--card-muted);
+    padding: 15px;
+    border-radius: 18px;
+    box-shadow: var(--shadow-soft);
+}
+
+.info-card h4 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--text-soft);
+}
+
+.info-card p {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* ================= FORECAST ================= */
+.forecast-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.section {
+    background: var(--card-soft);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+}
+
+.section h3 {
+    margin-bottom: 15px;
+}
+
+.hourly-scroll {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+.hour-card {
+    min-width: 70px;
+    background: var(--accent);
+    padding: 10px;
+    border-radius: 14px;
+    text-align: center;
+    color: white;
+    box-shadow: var(--shadow-strong);
+}
+
+.daily-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--accent);
+    padding: 8px 15px;
+    border-radius: 14px;
+    margin-bottom: 8px;
+    color: white;
+    box-shadow: var(--shadow-strong);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    font-size: 0.75rem;
+    opacity: 0.85;
+}
+
+.hidden { display: none; }
+
+/* ================= DARK MODE ================= */
+body.dark-theme {
+    --bg-main: linear-gradient(135deg,#020617,#0f172a);
+
+    --card-main: rgba(30,41,59,0.9);
+    --card-soft: rgba(30,41,59,0.75);
+    --card-muted: rgba(51,65,85,0.85);
+
+    --text-main: #e5e7eb;
+    --text-soft: #94a3b8;
+    --text-invert: #ffffff;
+
+    --accent: linear-gradient(135deg,#3b82f6,#6366f1);
+    --accent-btn: #6366f1;
+}
